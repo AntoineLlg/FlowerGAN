@@ -35,8 +35,8 @@ class Discriminator(nn.Module):
     def forward(self, X):
         return self.main(X)
 
-    def save(self):
-        torch.save(self.state_dict(), "saved_models/flower_discriminator_weights.pth")
+    def save(self, filename):
+        torch.save(self.state_dict(), filename)
 
 
 class Generator(nn.Module):
@@ -71,5 +71,5 @@ class Generator(nn.Module):
     def forward(self, X):
         return self.main(X)
 
-    def save(self):
-        torch.save(self.state_dict(), "saved_models/flower_generator_weights.pth")
+    def save(self, filename):
+        torch.save(self.state_dict(), filename)
